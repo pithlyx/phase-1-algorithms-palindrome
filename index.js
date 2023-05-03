@@ -2,7 +2,7 @@ function isPalindrome(word) {
   // Write your algorithm here
   let valid = false
   // console.log(word)
-  for (let i = 0; i <= Math.ceil(word.length/2-1); i++) {
+  for (let i = 0; i <= Math.ceil((word.length/2)-1); i++) {
     // console.log(word[i], word[word.length - (i + 1)])
     valid = (word[i] === word[word.length - (i + 1)]) ? true : false;
     if (!valid) {break}
@@ -14,7 +14,8 @@ function isPalindrome(word) {
 /* 
   Add your pseudocode here
 
-  compare the first element to the last element
+  loop through half of the word
+  compare "mirrored" elements and set valid = true/false
   step the first element index up and the last element index down
   repeat till you reach the "middle" of the word
   */
@@ -45,6 +46,16 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("a"));
+
+  console.log("");
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("ab"));
 }
 
 module.exports = isPalindrome;
